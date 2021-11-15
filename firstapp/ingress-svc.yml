@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: smartsworks-backend-ingress
+  labels:
+    name: smartsworks-backend-ingress
+spec:
+  rules:
+  - host: deekshith.in
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: smartsworks-backend-svc
+            port: 
+              number: 80
+
+
+
