@@ -45,4 +45,9 @@ public class DepartmentService {
         }
         return departmentRepository.save(departmentObj);
     }
+
+    public Department fetchDepartmentByName(String departmentName) {
+
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
+    }
 }
