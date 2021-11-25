@@ -14,6 +14,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/user")
+    public String usesrPage(){ return "From the userPage"; }
+
+    @GetMapping("/admin")
+    public String adminPage(){ return "From the adminPage"; }
+
     @GetMapping("/all")
     public List<Users> getallUsers() {
         return userService.fetchallUsers();
@@ -43,5 +49,11 @@ public class UserController {
         Users found_user = userService.findByuserName(userName);
         userService.deleteUser(found_user.getUserId());
         return "User " + found_user.getUserName() +" has Deleted User successfully";
+    }
+
+    @DeleteMapping("/deleteAll")
+    public String deleteAllUsers(){
+        userService.deleteAllUsers();
+        return "Deteled all users from the Database";
     }
 }

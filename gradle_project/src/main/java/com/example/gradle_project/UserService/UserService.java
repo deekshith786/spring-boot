@@ -32,4 +32,8 @@ public class UserService {
     public void deleteUserWithName(String userName) {
         userRepository.deleteByuserName(userName);
     }
+
+    public void deleteAllUsers() {
+        userRepository.deleteAll();
+    }
 }
