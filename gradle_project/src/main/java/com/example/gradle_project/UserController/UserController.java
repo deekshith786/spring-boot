@@ -46,8 +46,7 @@ public class UserController {
 
     @DeleteMapping("/deletebyName/{name}")
     public String deleteUserByName(@PathVariable("name") String userName){
-        Users found_user = userService.findByuse
-        rName(userName);
+        Users found_user = userService.findByuserName(userName);
         userService.deleteUser(found_user.getUserId());
         return "User " + found_user.getUserName() +" has Deleted User successfully";
     }
